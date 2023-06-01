@@ -33,14 +33,13 @@
       text-align: left;
       border-bottom: 1px solid #ddd;
       color: #ffffff;
-      /* Light text color */
     }
 
     input[type="text"] {
       margin-top: 3px;
-      width: 100%;
-      padding: 10px;
       margin-bottom: 10px;
+      width: 100%;
+      padding: 5px 0px 5px 0px;
       background-color: #2d2d2d;
       color: #ffffff;
     }
@@ -67,7 +66,7 @@
   <h4>A verdadeira moeda universal</h4>
 
   <label for="input-salario">Informe o valor do seu salário ou rendimento mensal:</label>
-  <input type="text" id="input-salario" placeholder="R$ 1.500,00">
+  <input type="text" id="input-salario" placeholder="R$ 1.500,00", inputmode="numeric">
   <label>Referência de cálculo: 8 horas por dia de trabalho, 220 horas por mês</label>
 
   <table id="tabela-produtos">
@@ -95,7 +94,7 @@
 
   <br><br>
 
-  Nenhuma informação do usuário desta página é salva em servidores. 
+  Nenhuma informação do usuário desta página é salva em servidores.
 
   <script>
     const horasTrabalhoDiario = 8;
@@ -109,7 +108,7 @@
 
     function formatarValorSalario() {
       let valor = inputSalario.value;
-      valor = valor.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+      valor = valor.replace(/\D/g, '');
       valor = (valor / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       inputSalario.value = valor;
     }
@@ -132,7 +131,7 @@
         { nome: '🏠 Casa', valor: 500000 },
         { nome: '🏎️ Carro Esportivo', valor: 5000000 },
       ];
-      tabelaProdutos.innerHTML = ''; // Limpar tabela
+      tabelaProdutos.innerHTML = '';
       produtos.forEach(produto => {
         const nomeCol = document.createElement('td');
         nomeCol.textContent = produto.nome;
