@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #6b6b6b;
+    color: #ffffff;
+}
+
+h1,
+h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #ffffff;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.salario__input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.social__div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.icon-margin {
+    margin-right: 5px;
+}
+
+/* icons */
+
+.linkedin-icon {
+    color: #0077B5;
+}
+
+.github-icon {
+    color: #ffffff;
+}

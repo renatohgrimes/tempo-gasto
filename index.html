@@ -5,187 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Quanto tempo de vida usar para pagar um bem?">
-  <meta property="og:title" content="Tempo Gasto de Vida">  
+  <meta property="og:title" content="Tempo Gasto de Vida">
   <title>Tempo Gasto 💸</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #2b2b2b;
-      color: #ffffff;
-    }
-
-    h1,
-    h4 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th,
-    td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-      color: #ffffff;
-    }
-
-    input[type="text"] {
-      margin-top: 3px;
-      margin-bottom: 10px;
-      width: 100%;
-      padding: 5px 0px 5px 0px;
-      background-color: #2d2d2d;
-      color: #ffffff;
-    }
-
-    .linkedin-icon {
-      color: #0077B5;
-    }
-
-    .github-icon {
-      color: #ffffff;
-    }
-
-    @media only screen and (min-width: 600px) {
-      body {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
+  <script defer type="application/javascript" src="index.js"></script>
 </head>
 
 <body>
-  <h1>Tempo Gasto de Vida</h1>
-  <h4>A verdadeira moeda universal</h4>
-
-  <label for="input-salario">Informe o valor do seu salário ou rendimento mensal:</label>
-  <input type="text" id="input-salario" placeholder="R$ 1.500,00", inputmode="numeric">
-  <label>Referência de cálculo: 8 horas por dia de trabalho, 220 horas por mês</label>
-
-  <table id="tabela-produtos">
-    <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Preço</th>
-        <th>Equivalência</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Dados da tabela serão adicionados dinamicamente com JavaScript -->
-    </tbody>
-  </table>
-
-  <br>
-
-  <a href="https://www.linkedin.com/in/renatohgrimes" target="_blank">
-    <i class="fab fa-linkedin linkedin-icon"></i> LinkedIn - renatohgrimes
-  </a>
-  &nbsp; &nbsp; &nbsp;
-  <a href="https://github.com/renatohgrimes" target="_blank">
-    <i class="fab fa-github github-icon"></i> GitHub
-  </a>
-
-  <br><br>
-
-  O salário ou rendimento mensal informado pelo usuário não é armazenado por este site.
-
-  <script>
-    const horasTrabalhoDiario = 8;
-    const horasTrabalhoMensal = 220;
-    const inputSalario = document.getElementById('input-salario');
-    const tabelaProdutos = document.getElementById('tabela-produtos').getElementsByTagName('tbody')[0];
-    inputSalario.addEventListener('input', () => {
-      formatarValorSalario();
-      montarTabelaTempo();
-    });
-
-    function formatarValorSalario() {
-      let valor = inputSalario.value;
-      valor = valor.replace(/\D/g, '');
-      valor = (valor / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-      inputSalario.value = valor;
-    }
-
-    function montarTabelaTempo() {
-      const valorSalario = parseFloat(inputSalario.value.replace(/\D/g, '')) / 100;
-      const produtos = [
-        { nome: '🍌 Banana', valor: 2 },
-        { nome: '🍝 Miojo', valor: 5 },
-        { nome: '🍨 Sorvete', valor: 15 },
-        { nome: '🍛 Marmita', valor: 25 },
-        { nome: '🍔 Hamburger', valor: 35 },
-        { nome: '🥩 Carne', valor: 90 },
-        { nome: '💳 Vale Presente', valor: 100 },
-        { nome: '💥 Air Fryer', valor: 350 },
-        { nome: '🔥 Fogão', valor: 750 },
-        { nome: '📱 Smartphone', valor: 1500 },
-        { nome: '🧊 Geladeira', valor: 3000 },
-        { nome: '🎮 Video Game', valor: 4500 },
-        { nome: '🛵 Motocicleta', valor: 15000 },
-        { nome: '🚗 Carro', valor: 90000 },
-        { nome: '🏠 Casa', valor: 500000 },
-        { nome: '🏎️ Carro Esportivo', valor: 5000000 },
-      ];
-      tabelaProdutos.innerHTML = '';
-      produtos.forEach(produto => {
-        const nomeCol = document.createElement('td');
-        nomeCol.textContent = produto.nome;
-        const precoCol = document.createElement('td');
-        precoCol.textContent = produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        const tempoCol = document.createElement('td');
-        tempoCol.textContent = calcularTempoCompra(valorSalario, produto.valor);
-        const row = document.createElement('tr');
-        row.appendChild(nomeCol);
-        row.appendChild(precoCol)
-        row.appendChild(tempoCol);
-        tabelaProdutos.appendChild(row);
-      });
-    }
-
-    function calcularTempoCompra(salario, precoProduto) {
-      if (salario === 0) {
-        return "";
-      }
-      var valorHora = salario / horasTrabalhoMensal;
-      var horasTempoGasto = precoProduto / valorHora;
-      return formatarTempo(horasTempoGasto);
-    }
-
-    function formatarTempo(horas) {
-      const anos = Math.floor(horas / (365 * horasTrabalhoDiario));
-      const meses = Math.floor(horas / (30.417 * horasTrabalhoDiario)) % 12;
-      const dias = Math.floor(horas / horasTrabalhoDiario) % 30;
-      const minutos = Math.floor((horas * 60) % 60);
-      const horasRestante = Math.floor(horas % horasTrabalhoDiario);
-      const arr = [];
-      if (anos !== 0) {
-        arr.push(`${anos} ano${anos !== 1 ? 's' : ''}`);
-      }
-      if (meses !== 0) {
-        arr.push(`${meses} ${meses !== 1 ? 'meses' : 'mês'}`);
-      }
-      if (dias !== 0) {
-        arr.push(`${dias} dia${dias !== 1 ? 's' : ''}`);
-      }
-      if (anos === 0 && meses === 0 && dias === 0) {
-        if (horasRestante > 0) {
-          arr.push(`${horasRestante} hora${horasRestante !== 1 ? 's' : ''}`);
-        }
-        arr.push(minutos > 0 ? `${minutos} minuto${minutos !== 1 ? 's' : ''}` : 'Insignificante')
-      }
-      return arr.join(', ');
-    }
-
-  </script>
+  <div>
+    <h1>Tempo Gasto de Vida</h1>
+    <h4>A verdadeira moeda universal</h4>
+    Informe o valor do seu salário ou rendimento mensal:
+    <input class="salario__input" type="text" id="inputSalario" placeholder="R$ 1.500,00" inputmode="numeric">
+    Referência de cálculo: 8 horas por dia de trabalho, 220 horas por mês
+  </div>
+  <div>
+    <table id="tabelaProdutos">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Equivalência</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <div class="social__div">
+    <a href="https://www.linkedin.com/in/renatohgrimes" target="_blank">
+      <i class="fab fa-linkedin linkedin-icon icon-margin"></i>LinkedIn - renatohgrimes</a>
+    <a href="https://github.com/renatohgrimes" target="_blank">
+      <i class="fab fa-github github-icon icon-margin"></i>GitHub</a>
+  </div>
+  As informações fornecidas pelo usuário não são armazenadas por este site.
 </body>
 
-</html
+</html>
