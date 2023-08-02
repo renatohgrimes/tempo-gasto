@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+    font-size: 14px;
     background-color: #6b6b6b;
     color: #ffffff;
 }
@@ -22,7 +21,7 @@ th,
 td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
     color: #ffffff;
 }
 
@@ -34,11 +33,10 @@ td {
 }
 
 .salario__input {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0px 10px 0px;
     width: 100%;
     padding: 5px 0px 5px 0px;
-    background-color: #2d2d2d;
+    background-color: #2d2b2b;
     color: #ffffff;
 }
 
