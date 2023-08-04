@@ -13,27 +13,19 @@
 </head>
 
 <body>
-    <h1>Tempo Gasto de Vida</h1>
-    <h4>A verdadeira moeda universal</h4>
-    Informe o valor do seu salário ou rendimento mensal:
-    <input class="salario__input" type="text" id="inputSalario" placeholder="R$ 1.500,00" inputmode="numeric">
-    Referência de cálculo: 8 horas por dia de trabalho, 220 horas por mês
-  <div>
-    <table id="tabelaProdutos">
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th>Equivalência (aprox.)</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+  <h1>Tempo Gasto de Vida</h1>
+  <h4>A verdadeira moeda universal</h4>
+  Informe o valor do seu salário ou rendimento mensal:
+  <input class="salario__input" type="text" id="inputSalario" placeholder="R$ 1.500,00" inputmode="numeric">
+  Referência de cálculo: 8 horas por dia de trabalho, 220 horas por mês
+  <div class="view-mode__div">
+    <i class="fa fa-columns" onclick="mudarVisaoTabela()"></i>
+  </div>
+  <div id="dataview__div">
   </div>
   <div class="social__div">
     <a href="https://www.linkedin.com/in/renatohgrimes" target="_blank">
-      <i class="fab fa-linkedin linkedin-icon icon-margin"></i>LinkedIn - renatohgrimes</a>
+      <i class="fab fa-linkedin linkedin-icon icon-margin"></i>LinkedIn</a>
     <a href="https://github.com/renatohgrimes" target="_blank">
       <i class="fab fa-github github-icon icon-margin"></i>GitHub</a>
   </div>

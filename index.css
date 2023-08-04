@@ -1,8 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    background-color: #6b6b6b;
+    font-size: 18px;
+    background-color: #000000;
     color: #ffffff;
+}
+
+.salario__input {
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    background-color: #2d2b2b;
+    color: #ffffff;
+    border-radius: 25px;
 }
 
 h1,
@@ -35,14 +44,22 @@ td {
 .salario__input {
     margin: 10px 0px 10px 0px;
     width: 100%;
-    padding: 5px 0px 5px 0px;
+    padding: 10px 0px 10px 10px;
     background-color: #2d2b2b;
     color: #ffffff;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.view-mode__div {
+    margin: 10px 0px 10px 0px;
+    text-align: right;
+    font-size: 20px;
 }
 
 .social__div {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .icon-margin {
