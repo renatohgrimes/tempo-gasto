@@ -41,16 +41,6 @@ td {
     }
 }
 
-.salario__input {
-    margin: 10px 0px 10px 0px;
-    width: 100%;
-    padding: 10px 0px 10px 10px;
-    background-color: #2d2b2b;
-    color: #ffffff;
-    border-radius: 25px;
-    font-size: 16px;
-}
-
 .view-mode__div {
     margin: 10px 0px 10px 0px;
     text-align: right;
